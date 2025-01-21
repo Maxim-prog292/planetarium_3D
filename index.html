@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+  </head>
+  <body>
+    <div class="load_ar">
+      <p class="load_ar-text">Загрузка...</p>
+    </div>
+
+    <a-scene id="scene">
+      <a-entity
+        id="sphere"
+        geometry="primitive: sphere"
+        position="-300 40 50"
+        light="color: #fff; intensity: 1"
+      >
+      </a-entity>
+      <a-camera id="camera" look-controls rotation="0 0 0" fov="40">
+        <a-entity
+          class="planet"
+          id="sun"
+          gltf-model="https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/sun%20(1).glb?v=1737036214487"
+          scale="5 5 5"
+          rotation="0 0 0"
+          animation="property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 720 0; loop: true"
+          position="80 0 -220"
+        >
+        </a-entity>
+      </a-camera>
+
+      <div class="animation play">
+        <img src="pause.png" alt="">
+      </div>
+      <div class="info">
+        <p>i</p>
+      </div>
+
+      <div id="description">
+        <h1 id="description-head">Солнце</h1>
+        <p id="description-text">
+          Солнце - это звезда в центре Солнечной системы. Это почти идеальная
+          сфера горячей плазмы, нагретая до накала реакциями ядерного синтеза в
+          своем ядре, излучающая энергию главным образом в виде видимого света,
+          ультрафиолетового света и инфракрасного излучения. Это, безусловно,
+          самый важный источник энергии для жизни на Земле.
+        </p>
+      </div>
+      <div class="info_list hide">
+        <p class="info_list-item type">Тип: Звезда (Желтый карлик)</p>
+        <p class="info_list-item temp">
+          Температура: Температура поверхности — 5780 кельвинов (5506 С°)
+        </p>
+        <p class="info_list-item radius">
+          Радиус: Экваториальный радиус 6,9551⋅108 м
+        </p>
+        <p class="info_list-item square">
+          Площадь: 6,07877⋅1018 м² (11 918 площадей Земли)
+        </p>
+        <p class="info_list-item obiom">
+          Объем: 1,40927⋅1027 м³ (1 301 019 объёмов Земли)
+        </p>
+        <p class="info_list-item mass">Масса: 1,9885 ⋅ 1030 кг.</p>
+        <p class="info_list-item plotnost">Средняя плотность: 1,409 г/см³</p>
+        <p class="info_list-item atmosfera">
+          Состав: Водород - 97% и Гелий - 7%
+        </p>
+        <p class="info_list-item forEarth">
+          Среднее расстояние до Земли: 149,6 млн км (8,31 световых минут) или 1
+          a.e.
+        </p>
+        <p class="info_list-item periodVrashenieOsi">
+          Период вращения вокруг оси: На экваторе - 25.6 дней
+        </p>
+        <p class="info_list-item year">
+          Период вращения вокруг оси: На экваторе - 25.6 дней
+        </p>
+        <p class="info_list-item sattelite">Спутники: У Солнца 8 планет</p>
+        <p class="info_list-item coreTemp">Температура ядра: 15 000 000 °C</p>
+      </div>
+
+      <a-sky-background top-color="#000" bottom-color="#000"></a-sky-background>
+
+      <a-assets>
+        <img
+          id="sky"
+          src="https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/HDR_hazy_nebulae.png?v=1737452175057"
+        />
+      </a-assets>
+
+      <a-sky src="#sky"></a-sky>
+
+      <div class="buttons">
+        <button class="button sun">Солнце</button>
+        <button class="button merc">Меркурий</button>
+        <button class="button venus">Венера</button>
+        <button class="button earth">Земля</button>
+        <button class="button mars">Марс</button>
+        <button class="button jupiter">Юпитер</button>
+        <button class="button saturn">Сатурн</button>
+        <button class="button uran">Уран</button>
+        <button class="button neptune">Нептун</button>
+      </div>
+    </a-scene>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
