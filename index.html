@@ -1,16 +1,8 @@
 <html>
   <head>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
-        }
-      }
-    </script>
+    <script type="importmap"></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+    <script src="aframe-v1.6.0.min.js"></script>
   </head>
   <body>
     <div class="load_ar">
@@ -29,7 +21,7 @@
         <a-entity
           class="planet"
           id="sun"
-          gltf-model="https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/sun%20(1).glb?v=1737036214487"
+          gltf-model="objects/sun.glb"
           scale="5 5 5"
           rotation="0 0 0"
           animation="property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 720 0; loop: true"
@@ -39,7 +31,7 @@
       </a-camera>
 
       <div class="animation play">
-        <img src="pause.png" alt="">
+        <img src="pause.png" alt="" />
       </div>
       <div class="info">
         <p>i</p>
@@ -91,10 +83,7 @@
       <a-sky-background top-color="#000" bottom-color="#000"></a-sky-background>
 
       <a-assets>
-        <img
-          id="sky"
-          src="https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/HDR_hazy_nebulae.png?v=1737452175057"
-        />
+        <img id="sky" src="sky.png" />
       </a-assets>
 
       <a-sky src="#sky"></a-sky>

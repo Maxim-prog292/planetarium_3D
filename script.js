@@ -1,8 +1,7 @@
 const planetsObject = {
   sun: {
     scale: "5 5 5",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/sun%20(1).glb?v=1737036214487",
+    gltfModel: "objects/sun.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 1440 0; loop: true",
     name: "Солнце",
@@ -32,8 +31,7 @@ const planetsObject = {
   },
   merc: {
     scale: "10 10 10",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/mercury_planet.glb?v=1737023649837",
+    gltfModel: "objects/mercury.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 1440 0; loop: true",
     name: "Меркурий",
@@ -65,8 +63,7 @@ const planetsObject = {
   },
   venus: {
     scale: "1 1 1",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/venus%20(4).glb?v=1737103935376",
+    gltfModel: "objects/venus.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 -1440 0; loop: true",
     name: "Венера",
@@ -98,8 +95,7 @@ const planetsObject = {
   },
   earth: {
     scale: "0.26 0.26 0.26",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/planet_earth%20(1).glb?v=1736856023729",
+    gltfModel: "objects/earth.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 1440 0; loop: true",
     name: "Земля",
@@ -130,8 +126,7 @@ const planetsObject = {
   },
   mars: {
     scale: "7.1 7.1 7.1",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/mars%20(4).glb?v=1737103765937",
+    gltfModel: "objects/mars.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 1440 0; loop: true",
     name: "Марс",
@@ -163,8 +158,7 @@ const planetsObject = {
   },
   jupiter: {
     scale: "5.1 5.1 5.1",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/jupiter%20(1).glb?v=1736856659220",
+    gltfModel: "objects/jupiter.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 1440 0; loop: true",
     name: "Юпитер",
@@ -194,8 +188,7 @@ const planetsObject = {
   },
   saturn: {
     scale: "48.5 48.5 48.5",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/saturn_planet.glb?v=1736856793981",
+    gltfModel: "objects/saturn.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 1440 0; loop: true",
     name: "Сатурн",
@@ -225,8 +218,7 @@ const planetsObject = {
   },
   uran: {
     scale: "0.085 0.085 0.085",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/realistic_uranus_4k.glb?v=1737105678448",
+    gltfModel: "objects/uranus.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 0 0; loop: true",
     name: "Уран",
@@ -256,8 +248,7 @@ const planetsObject = {
   },
   neptune: {
     scale: "5 5 5",
-    gltfModel:
-      "https://cdn.glitch.global/3109ca4d-2713-4595-96c0-4be0841be87f/neptune%20(1).glb?v=1736857442743",
+    gltfModel: "objects/neptune.glb",
     animation:
       "property: rotation; easing: linear; dir: alternate; dur: 400000;  to: 0 1440 0; loop: true",
     name: "Нептун",
@@ -334,9 +325,16 @@ function changeInfo(object) {
 infoButton.addEventListener("click", (e) => {
   e.target.classList.toggle("visible");
   if (e.target.classList.contains("visible")) {
+    infoList.classList.remove("animation-info-close");
     infoList.classList.remove("hide");
+    infoList.classList.add("animation-info");
   } else {
-    infoList.classList.add("hide");
+    infoList.classList.add("animation-info-close");
+
+    setTimeout(() => {
+      infoList.classList.add("hide");
+    }, 500);
+    infoList.classList.remove("animation-info");
   }
 });
 
