@@ -1,3 +1,11 @@
+@font-face {
+  font-family: TT_P_R;
+  src: url(fonts/TT-Paplane-Regular.ttf);
+}
+@font-face {
+  font-family: TT_O_R;
+  src: url(fonts/TT_Octosquares_Regular.ttf);
+}
 .load_ar {
   display: flex;
   justify-content: center;
@@ -10,6 +18,7 @@
   color: #fff;
   font-size: 48px;
 }
+
 #scene {
   height: 90% !important;
   z-index: 1;
@@ -23,6 +32,7 @@
   top: -90px;
   left: 490px;
   z-index: 1;
+  
 }
 button {
   background: none;
@@ -33,7 +43,12 @@ button {
   margin-right: 18px;
   font-size: 32px;
   font-weight: 300;
-  font-family: "Courier New", Courier, monospace;
+  font-family: TT_P_R;
+  background: rgba(77, 77, 77, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(8.7px);
+  border-radius: 15px;
+  border-left: 1px solid rgba(54, 54, 54, 0.5);
 }
 button:active {
   color: #ffffff;
@@ -49,7 +64,7 @@ button:active {
   justify-content: center;
   width: 470px;
   min-height: 100vh;
-  background: linear-gradient(rgba(93, 93, 93, 0.2), rgba(0, 0, 0, 0.1));
+  background: rgba(77, 77, 77, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(8.7px);
   border-left: 1px solid rgba(54, 54, 54, 0.5);
@@ -68,15 +83,21 @@ button:active {
   position: absolute;
   left: 10px;
   top: calc(1080px / 2 - 300px);
-  font-size: 94px;
+  font-size: 90px;
   font-weight: 200;
+  font-family: TT_P_R;
 }
 #description-text {
   width: 450px;
-  text-align: justify;
   position: absolute;
   left: 10px;
   top: calc(1080px / 2 - 60px);
+  font-family: TT_O_R;
+}
+#description-symvol {
+  position: absolute;
+  top: -170px;
+  font-size: 200px;
 }
 
 .animation,
@@ -95,7 +116,7 @@ button:active {
   left: 1820px;
   z-index: 1;
   font-size: 54px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: TT_P_R;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,10 +161,11 @@ button:active {
   padding-top: 2px;
   padding-bottom: 2px;
   font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: TT_O_R;
 }
 .title_info {
-  font-weight: 600;
+  font-family: TT_P_R;
+  font-size: 16px ;
 }
 .info_list-item:nth-child(1) {
   left: -20px;
